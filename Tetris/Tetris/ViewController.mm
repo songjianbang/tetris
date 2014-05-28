@@ -7,6 +7,9 @@
 //
 
 #import "ViewController.h"
+#include "game.h"
+
+CGame g_game;
 
 #define BUFFER_OFFSET(i) ((char *)NULL + (i))
 
@@ -113,6 +116,11 @@ GLfloat gCubeVertexData[216] =
     view.drawableDepthFormat = GLKViewDrawableDepthFormat24;
     
     [self setupGL];
+    
+    if (!g_game.InitGame())
+    {
+        NSLog(@"fail to init game");
+    }
 }
 
 - (void)dealloc
@@ -223,9 +231,9 @@ GLfloat gCubeVertexData[216] =
     glBindVertexArrayOES(_vertexArray);
     
     // Render the object with GLKit
-    [self.effect prepareToDraw];
+//    [self.effect prepareToDraw];
     
-    glDrawArrays(GL_TRIANGLES, 0, 36);
+//    glDrawArrays(GL_TRIANGLES, 0, 36);
     
     // Render the object again with ES2
     glUseProgram(_program);

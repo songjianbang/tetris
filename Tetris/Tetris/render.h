@@ -12,6 +12,7 @@
 #include <iostream>
 
 #include <vector>
+#include <OpenGLES/ES2/gl.h>
 
 typedef int PictureHandle;
 extern const PictureHandle INVALIDATE_PICTURE;
@@ -53,6 +54,23 @@ struct Batch
     std::vector<Vertex> vertices;
 };
 
+class CTechnique
+{
+public:
+    CTechnique();
+    ~CTechnique();
+    
+    bool InitTechnique(const char* vertexShader, const char* pixelShader);
+    
+private:
+    
+    bool CompileShader(GLuint shader, const char* strShader);
+    GLuint m_hV;
+    GLuint m_hF;
+    GLuint m_hProgram;
+
+};
+
 class CRender
 {
 public:
@@ -67,12 +85,17 @@ public:
         float   rotate;
     };
     
+    bool InitRender();
+    
     void DrawPicture(PictureHandle hPic, CRect & dest);
     void DrawPicture(PictureHandle hPic, DrawPictureParameter& dpp);
     
+    void BeginRender();
+    void EndRender();
 private:
     std::vector<Vertex> m_vertexes;
     std::vector<Batch>  m_batches;
+    CTechnique          m_technique;
 };
 
 #endif /* defined(__Tetris__render__) */

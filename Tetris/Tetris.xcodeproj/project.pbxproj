@@ -27,6 +27,7 @@
 		096C2F751931BD18007EC3A3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 096C2F731931BD18007EC3A3 /* InfoPlist.strings */; };
 		096C2F771931BD18007EC3A3 /* TetrisTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 096C2F761931BD18007EC3A3 /* TetrisTests.m */; };
 		096C2F861934EC67007EC3A3 /* render.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 096C2F841934EC67007EC3A3 /* render.cpp */; };
+		096C2F8919361C2F007EC3A3 /* game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 096C2F8719361C2F007EC3A3 /* game.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,8 @@
 		096C2F761931BD18007EC3A3 /* TetrisTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TetrisTests.m; sourceTree = "<group>"; };
 		096C2F841934EC67007EC3A3 /* render.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = render.cpp; sourceTree = "<group>"; };
 		096C2F851934EC67007EC3A3 /* render.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = render.h; sourceTree = "<group>"; };
+		096C2F8719361C2F007EC3A3 /* game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = game.cpp; sourceTree = "<group>"; };
+		096C2F8819361C2F007EC3A3 /* game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = game.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +144,8 @@
 				096C2F4B1931BD18007EC3A3 /* Supporting Files */,
 				096C2F841934EC67007EC3A3 /* render.cpp */,
 				096C2F851934EC67007EC3A3 /* render.h */,
+				096C2F8719361C2F007EC3A3 /* game.cpp */,
+				096C2F8819361C2F007EC3A3 /* game.h */,
 			);
 			path = Tetris;
 			sourceTree = "<group>";
@@ -277,6 +282,7 @@
 				096C2F621931BD18007EC3A3 /* ViewController.mm in Sources */,
 				096C2F551931BD18007EC3A3 /* AppDelegate.m in Sources */,
 				096C2F511931BD18007EC3A3 /* main.m in Sources */,
+				096C2F8919361C2F007EC3A3 /* game.cpp in Sources */,
 				096C2F861934EC67007EC3A3 /* render.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

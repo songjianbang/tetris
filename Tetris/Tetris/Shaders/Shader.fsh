@@ -10,5 +10,9 @@ varying lowp vec4 colorVarying;
 
 void main()
 {
-    gl_FragColor = colorVarying;
+    //colorVarying.r = 1.0;
+    //colorVarying.g = 1.0;
+    gl_FragColor = vec4(1.0, 0, 0, 0);//colorVarying;
+
+    //gl_FragColor.r = 1.0;
 }
