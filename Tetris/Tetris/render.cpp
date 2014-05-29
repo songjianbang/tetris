@@ -17,9 +17,17 @@ attribute vec4 color;\
 attribute vec2 tex;\
 \
 uniform mat4 modelViewProjMat;\
+void main()\
+{\
+gl_Position = position;\
+}\
 ";
 
 const char* g_pixel_shader = "\
+void main()\
+{\
+gl_FragColor = vec4(1.0, 0, 0, 0);\
+}\
 ";
 
 CTechnique::CTechnique()
@@ -32,24 +40,51 @@ CTechnique::~CTechnique()
     
 }
 
+void CTechnique::UseTechnique()
+{
+    glUseProgram(m_hProgram);
+}
+
 bool CTechnique::InitTechnique(const char* vertexShader, const char* pixelShader)
 {
     m_hProgram = glCreateProgram();
     m_hV = glCreateShader(GL_VERTEX_SHADER);
     m_hF = glCreateShader(GL_FRAGMENT_SHADER);
     
-    if (CompileShader(GL_VERTEX_SHADER, vertexShader) == false) {
+    if (CompileShader(m_hV, vertexShader) == false) {
         assert(false);
         return false;
     }
     
-    if (CompileShader(GL_FRAGMENT_SHADER, pixelShader) == false) {
+    if (CompileShader(m_hF, pixelShader) == false) {
         assert(false);
         return false;
     }
     
     glAttachShader(m_hProgram, m_hV);
     glAttachShader(m_hProgram, m_hF);
+    
+
+    GLint status;
+    glLinkProgram(m_hProgram);
+    
+//#if defined(DEBUG)
+    GLint logLength;
+    glGetProgramiv(m_hProgram, GL_INFO_LOG_LENGTH, &logLength);
+    if (logLength > 0) {
+        GLchar *log = (GLchar *)malloc(logLength);
+        glGetProgramInfoLog(m_hProgram, logLength, &logLength, log);
+        //NSLog(@"Program link log:\n%s", log);
+        printf(log);
+        free(log);
+    }
+//#endif
+    
+    glGetProgramiv(m_hProgram, GL_LINK_STATUS, &status);
+    if (status == 0) {
+        return false;
+    }
+    
     return true;
 }
 
@@ -129,7 +164,7 @@ void CRender::DrawPicture(PictureHandle hPic, CRender::DrawPictureParameter& dpp
 
 void CRender::BeginRender()
 {
-    
+    m_technique.UseTechnique();
 }
 
 void CRender::EndRender()

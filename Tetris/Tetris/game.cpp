@@ -32,5 +32,6 @@ void CGame::Tick(float aDelta)
 
 void CGame::Render()
 {
-    
+    m_render.BeginRender();
+    m_render.EndRender();
 }

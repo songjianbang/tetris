@@ -61,6 +61,7 @@ public:
     ~CTechnique();
     
     bool InitTechnique(const char* vertexShader, const char* pixelShader);
+    void UseTechnique();
     
 private:
     

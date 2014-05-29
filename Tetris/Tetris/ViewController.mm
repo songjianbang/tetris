@@ -236,7 +236,9 @@ GLfloat gCubeVertexData[216] =
 //    glDrawArrays(GL_TRIANGLES, 0, 36);
     
     // Render the object again with ES2
-    glUseProgram(_program);
+    //glUseProgram(_program);
+    
+    g_game.Render();
     
     glUniformMatrix4fv(uniforms[UNIFORM_MODELVIEWPROJECTION_MATRIX], 1, 0, _modelViewProjectionMatrix.m);
     glUniformMatrix3fv(uniforms[UNIFORM_NORMAL_MATRIX], 1, 0, _normalMatrix.m);
