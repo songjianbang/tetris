@@ -14,7 +14,7 @@
 		096C2F491931BD18007EC3A3 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 096C2F481931BD18007EC3A3 /* OpenGLES.framework */; };
 		096C2F4F1931BD18007EC3A3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 096C2F4D1931BD18007EC3A3 /* InfoPlist.strings */; };
 		096C2F511931BD18007EC3A3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 096C2F501931BD18007EC3A3 /* main.m */; };
-		096C2F551931BD18007EC3A3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 096C2F541931BD18007EC3A3 /* AppDelegate.m */; };
+		096C2F551931BD18007EC3A3 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 096C2F541931BD18007EC3A3 /* AppDelegate.mm */; };
 		096C2F581931BD18007EC3A3 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 096C2F561931BD18007EC3A3 /* Main_iPhone.storyboard */; };
 		096C2F5B1931BD18007EC3A3 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 096C2F591931BD18007EC3A3 /* Main_iPad.storyboard */; };
 		096C2F5D1931BD18007EC3A3 /* Shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 096C2F5C1931BD18007EC3A3 /* Shader.fsh */; };
@@ -52,7 +52,7 @@
 		096C2F501931BD18007EC3A3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		096C2F521931BD18007EC3A3 /* Tetris-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tetris-Prefix.pch"; sourceTree = "<group>"; };
 		096C2F531931BD18007EC3A3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		096C2F541931BD18007EC3A3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		096C2F541931BD18007EC3A3 /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
 		096C2F571931BD18007EC3A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		096C2F5A1931BD18007EC3A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		096C2F5C1931BD18007EC3A3 /* Shader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = Shader.fsh; path = Shaders/Shader.fsh; sourceTree = "<group>"; };
@@ -133,7 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				096C2F531931BD18007EC3A3 /* AppDelegate.h */,
-				096C2F541931BD18007EC3A3 /* AppDelegate.m */,
+				096C2F541931BD18007EC3A3 /* AppDelegate.mm */,
 				096C2F561931BD18007EC3A3 /* Main_iPhone.storyboard */,
 				096C2F591931BD18007EC3A3 /* Main_iPad.storyboard */,
 				096C2F5C1931BD18007EC3A3 /* Shader.fsh */,
@@ -280,7 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				096C2F621931BD18007EC3A3 /* ViewController.mm in Sources */,
-				096C2F551931BD18007EC3A3 /* AppDelegate.m in Sources */,
+				096C2F551931BD18007EC3A3 /* AppDelegate.mm in Sources */,
 				096C2F511931BD18007EC3A3 /* main.m in Sources */,
 				096C2F8919361C2F007EC3A3 /* game.cpp in Sources */,
 				096C2F861934EC67007EC3A3 /* render.cpp in Sources */,

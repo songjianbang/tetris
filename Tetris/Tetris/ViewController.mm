@@ -8,8 +8,8 @@
 
 #import "ViewController.h"
 #include "game.h"
+#include <sys/time.h>
 
-CGame g_game;
 
 #define BUFFER_OFFSET(i) ((char *)NULL + (i))
 
@@ -114,6 +114,8 @@ GLfloat gCubeVertexData[216] =
     GLKView *view = (GLKView *)self.view;
     view.context = self.context;
     view.drawableDepthFormat = GLKViewDrawableDepthFormat24;
+    
+    [self setPreferredFramesPerSecond:40];
     
     [self setupGL];
     
@@ -221,6 +223,21 @@ GLfloat gCubeVertexData[216] =
     _modelViewProjectionMatrix = GLKMatrix4Multiply(projectionMatrix, modelViewMatrix);
     
     _rotation += self.timeSinceLastUpdate * 0.5f;
+    
+//    NSCalendar* c = [NSCalendar currentCalendar];
+//    [c components:<#(NSCalendarUnit)#> fromDate:<#(NSDate *)#>]
+//    NSDate * noww = [[NSDate alloc] init];
+
+    struct timeval now;
+    static struct timeval _lastUpdate;
+    gettimeofday(&now, nullptr);
+    
+    
+    float _deltaTime = (now.tv_sec - _lastUpdate.tv_sec) + (now.tv_usec - _lastUpdate.tv_usec) / 1000000.0f;
+    _lastUpdate = now;
+    
+    printf("%f", 1/60.f);
+    g_game.Tick(_deltaTime);
 }
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect
@@ -243,7 +260,7 @@ GLfloat gCubeVertexData[216] =
     glUniformMatrix4fv(uniforms[UNIFORM_MODELVIEWPROJECTION_MATRIX], 1, 0, _modelViewProjectionMatrix.m);
     glUniformMatrix3fv(uniforms[UNIFORM_NORMAL_MATRIX], 1, 0, _normalMatrix.m);
     
-    glDrawArrays(GL_TRIANGLES, 0, 36);
+//    glDrawArrays(GL_TRIANGLES, 0, 36);
 }
 
 #pragma mark -  OpenGL ES 2 shader compilation

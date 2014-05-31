@@ -13,6 +13,7 @@
 
 #include <vector>
 #include <OpenGLES/ES2/gl.h>
+#include <OpenGLES/ES2/glext.h>
 
 typedef int PictureHandle;
 extern const PictureHandle INVALIDATE_PICTURE;
@@ -46,6 +47,7 @@ struct Vertex
     float x,y,z;
     float r,g,b,a;
     float tx,ty;
+    Vertex(float aX = 0, float aY = 0, float aZ = 0):x(aX), y(aY), z(aZ){}
 };
 
 struct Batch
@@ -97,6 +99,7 @@ private:
     std::vector<Vertex> m_vertexes;
     std::vector<Batch>  m_batches;
     CTechnique          m_technique;
+    GLuint              m_hvb;
 };
 
 #endif /* defined(__Tetris__render__) */

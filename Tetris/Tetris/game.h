@@ -21,11 +21,16 @@ public:
     
     bool InitGame();
     
+    void TouchBegin(float x, float y);
+    
     void Tick(float aDelta);
     void Render();
     
+    CRect m_rect;
 private:
     CRender m_render;
 };
+
+extern CGame g_game;
 
 #endif /* defined(__Tetris__game__) */
